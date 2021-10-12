@@ -1,3 +1,0 @@
-/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/build/CMakeFiles/rebuild_cache.dir
-/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/build/CMakeFiles/edit_cache.dir
-/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/build/CMakeFiles/socks5_client.dir
