@@ -132,11 +132,11 @@ private:
                         return -1;
 ///////////////////////////////
 
-                    uint8_t addr_type = in_buf[3], host_length;
+                    uint8_t addr_type = in_buf[3], host_len;
 
                     switch (addr_type)
                     {
-                    case 0x01: // IP V4 addres
+                    case 0x01: // IP v4 addres
                         if (len != 10) { return -1; }
 //                        ///////////////////////////////
 //                        printf(" in_buf[4] =============== %X\n", in_buf[4]);
@@ -154,20 +154,20 @@ private:
                         remote_host = boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))).to_string();
                         remote_port = std::to_string(ntohs(*((uint16_t*)&in_buf[8])));
                         break;
-                    case 0x03: // DOMAINNAME
-                        host_length = in_buf[4];
-                        if (len != (size_t)(5 + host_length + 2))
+                    case 0x03: // domainname
+                        host_len = in_buf[4];
+                        if (len != (size_t)(5 + host_len + 2))
                         {
                             return -1;
                         }
-                        remote_host = std::string(&in_buf[5], host_length);
-                        remote_port = std::to_string(ntohs(*((uint16_t*)&in_buf[5 + host_length])));
+                        remote_host = std::string(&in_buf[5], host_len);
+                        remote_port = std::to_string(ntohs(*((uint16_t*)&in_buf[5 + host_len])));
                         break;
                     default:
                         break;
                     }
-                std::cout<< "remote_host = " << remote_host  << std::endl;
-                std::cout<< "remote_port = " << remote_port << std::endl;
+//                std::cout<< "remote_host = " << remote_host  << std::endl;
+//                std::cout<< "remote_port = " << remote_port << std::endl;
                     do_resolve();
 
 
@@ -183,7 +183,7 @@ private:
     {
         auto self(shared_from_this());
 
-        resolver.async_resolve(boost::asio::ip::tcp::resolver::query({ remote_host, remote_port}),
+        resolver.async_resolve(boost::asio::ip::tcp::resolver::query({remote_host, remote_port}),
             [this, self](const boost::system::error_code& ec, boost::asio::ip::tcp::resolver::iterator it)
             {
                 if (!ec)

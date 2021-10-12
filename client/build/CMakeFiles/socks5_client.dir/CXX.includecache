@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/client.cpp
+gen.hpp
+/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/gen.hpp
+iostream
+-
+memory
+-
+
+/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/gen.cpp
+gen.hpp
+/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/gen.hpp
+vector
+-
+arpa/inet.h
+-
+
+/home/c0nn3ct/Documents/my_home/Asynchronous_program/client/gen.hpp
+cstdint
+-
+memory
+-
+sys/socket.h
+-
+asm-generic/socket.h
+-
+errno.h
+-
+unistd.h
+-
+netdb.h
+-
+string.h
+-
+iostream
+-
+
