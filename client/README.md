@@ -5,7 +5,7 @@ mkdir build && cd build && cmake .. && make && ./socks5_client
 
 Будет ~ такой вывод: 
 
-
+```
 HTTP/1.1 200 OK
 access-control-allow-origin: *
 content-type: text/html; charset=utf-8
@@ -15,4 +15,4 @@ x-envoy-upstream-service-time: 1
 Via: 1.1 google
 
 109.252.115.147
-
+```
