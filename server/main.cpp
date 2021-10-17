@@ -50,10 +50,10 @@ private:
                     return;
                 }
             ////////////////////////////////
-            for(int i=0; i < 5; i++)
-            {
+//            for(int i=0; i < 5; i++)
+//            {
 //                printf("%d = %X\n",i, in_buf[i]);
-            }
+//            }
             /////////////////////////////////
             uint8_t NMETHODS = in_buf[1];
             in_buf[1] = 0xFF;
@@ -141,8 +141,8 @@ private:
 //                        printf(" boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))) =============== %X\n", boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))));
 
 
-//                        std::cout << "--------------------- " << (uint32_t*)&in_buf[4] << std::endl;
-//                        std::cout << "in_buf[4] --------------------- " << in_buf[4] << std::endl;
+                        std::cout << "--------------------- " << (uint32_t*)&in_buf[4] << std::endl;
+                        std::cout << "in_buf[4] --------------------- " << in_buf[4] << std::endl;
 
 //                        ///////////////////////////////
                         remote_host = boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))).to_string();
