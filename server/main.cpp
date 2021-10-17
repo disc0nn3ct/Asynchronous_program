@@ -52,7 +52,7 @@ private:
             ////////////////////////////////
             for(int i=0; i < 5; i++)
             {
-                printf("%d = %X\n",i, in_buf[i]);
+//                printf("%d = %X\n",i, in_buf[i]);
             }
             /////////////////////////////////
             uint8_t NMETHODS = in_buf[1];
@@ -109,16 +109,10 @@ private:
 //    The SOCKS server will typically evaluate the request based on source
 //    and destination addresses, and return one or more reply messages, as
 //    appropriate for the request type.
-//    -----More info----
 //    o  X'01'
-
 //the address is a version-4 IP address, with a length of 4 octets
-
 //    o  X'03'
 
-//the address field contains a fully-qualified domain name.  The first
-//octet of the address field contains the number of octets of name that
-//follow, there is no terminating NUL octet.
 
     void read_request_socks5()
     {

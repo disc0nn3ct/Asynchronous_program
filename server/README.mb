@@ -1,4 +1,8 @@
-Использовалось QT Creator на Ubuntu 20.04
+Необходим BOOST.
+
+
+Для запуска: 
+
 
 ```shell
 mkdir build && cd build && cmake .. && make && ./server 

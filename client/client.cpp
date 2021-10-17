@@ -3,10 +3,12 @@
 #include <memory>
 
 int main(int argc, char *argv[]){
+
     std::unique_ptr<SOCKS5_Handle> socket_handler =
 		SOCKS5_Factory::CreateSocksClient(SOCKS5_Factory::SOCKS5_Type::SOCKS5_NOAUTH, "127.0.0.1", 1080);
 	// connecting to public ip check site through Tor daemon's SOCKS server and resolving the domain name remotly(Exit relay's endpoint)
     socket_handler->connect_proxy_socks("www.ipinfo.io", 80);
+
 
 
 
@@ -32,7 +34,6 @@ int main(int argc, char *argv[]){
 	socket_handler->read_proxy(reply_buff_size, read_buffer_reply);
 
 
-	std::cout << "uraaaa = " << std::endl;
 	std::cout << read_buffer_reply << std::endl;
 
 	delete[] read_buffer_reply;
