@@ -160,7 +160,7 @@ private:
                     default:
                         break;
                     }
-//                std::cout<< "remote_host = " << remote_host  << std::endl;
+                std::cout<< "remote_host = " << remote_host  << std::endl;
 //                std::cout<< "remote_port = " << remote_port << std::endl;
                     do_resolve();
 
@@ -290,7 +290,7 @@ private:
                     }
                     else //if (ec != boost::asio::error::eof)
                     {
-                        // Most probably client closed socket. Let's close both sockets and exit session.
+                        // Скорее всего клиент закрыл, сокет => надо закрыть оба сокета и выйти из сессии
                         in_socket.close(); out_socket.close();
                     }
 
@@ -308,7 +308,7 @@ private:
                     }
                     else //if (ec != boost::asio::error::eof)
                     {
-                        // Most probably remote server closed socket. Let's close both sockets and exit session.
+                        // Скорее всего сервер закрыл, сокет => надо закрыть оба сокета и выйти из сессии
                         in_socket.close(); out_socket.close();
                     }
                 });
@@ -328,7 +328,7 @@ private:
                         do_read(direction);
                     else
                     {
-                        // Most probably client closed socket. Let's close both sockets and exit session.
+                        // Скорее всего клиент закрыл, сокет => надо закрыть оба сокета и выйти из сессии
                         in_socket.close(); out_socket.close();
                     }
                 });
@@ -341,7 +341,7 @@ private:
                         do_read(direction);
                     else
                     {
-                        // Most probably remote server closed socket. Let's close both sockets and exit session.
+                        // Скорее всего Сервер закрыл, сокет => надо закрыть оба сокета и выйти из сессии
                         in_socket.close(); out_socket.close();
                     }
                 });
@@ -386,7 +386,7 @@ private:
             }
             else
                 std::cout << "ERROR accept socket" << std::endl;
-            make_accept();
+                make_accept();
         }
 
     );
