@@ -24,7 +24,7 @@ enum class SOCKS5_RESOLVE{
     LOCAL_RESOLVE = 0x02
 };
 
-// Anonymous SOCKS5 connect (NOAUTH default)
+// Анонимный SOCKS5 соединеие (NOAUTH по умолчанию )
 enum class SOCKS5_CGREETING_NOAUTH : std::uint8_t{
     VERSION		= static_cast<std::uint8_t>(SOCKS5_DEFAULTS::VERSION),
     NAUTH		= static_cast<std::uint8_t>(SOCKS5_DEFAULTS::SUPPORT_AUTH),
@@ -37,7 +37,7 @@ enum class SOCKS5_ADDR_TYPE : std::uint8_t{
     IPv6		= 0x04
 };
 
-// SOCKS5 Client connection request commands
+// SOCKS5 клиент запрос подключения 
 enum class SOCKS5_CCONNECTION_CMD : std::uint8_t{
     TCP_IP_STREAM	= 0x01,
     TCP_IP_PORT_BIND = 0x02,
@@ -95,7 +95,7 @@ static inline int create_socket_client(const char* name, std::uint16_t port){
 
 
 
-// General Interface
+// Общий интерфейс
 class SOCKS5_Handle{
 	protected:
         virtual int connect_proxy_socks5(const std::string& server_ip, std::uint16_t server_port) = 0;
