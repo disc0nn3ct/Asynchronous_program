@@ -259,12 +259,12 @@ private:
         std::memcpy(&in_buf[4], &realRemoteIP, 4);
         std::memcpy(&in_buf[8], &realRemoteport, 2);
 
-        boost::asio::async_write(in_socket, boost::asio::buffer(in_buf, 10), // Always 10-byte according to RFC1928
+        boost::asio::async_write(in_socket, boost::asio::buffer(in_buf, 10), // Всегда 10 байт согласно RFC1928
             [this, self](boost::system::error_code ec, std::size_t len)
             {
                 if (!ec)
                 {
-                    do_read(3); // Read both sockets
+                    do_read(3); // Читать оба сокета
                 }
             });
     }
@@ -274,7 +274,7 @@ private:
     {
         auto self(shared_from_this());
 
-        // We must divide reads by direction to not permit second read call on the same socket.
+        // Для того что бы разделить чтение по направлениям:
         if (direction & 0x1)
             in_socket.async_receive(boost::asio::buffer(in_buf),
                 [this, self](boost::system::error_code ec, std::size_t len)
