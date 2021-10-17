@@ -141,8 +141,8 @@ private:
 //                        printf(" boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))) =============== %X\n", boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))));
 
 
-                        std::cout << "--------------------- " << (uint32_t*)&in_buf[4] << std::endl;
-                        std::cout << "in_buf[4] --------------------- " << in_buf[4] << std::endl;
+//                        std::cout << "--------------------- " << (uint32_t*)&in_buf[4] << std::endl;
+//                        std::cout << "in_buf[4] --------------------- " << in_buf[4] << std::endl;
 
 //                        ///////////////////////////////
                         remote_host = boost::asio::ip::address_v4(ntohl(*((uint32_t*)&in_buf[4]))).to_string();
@@ -251,9 +251,6 @@ private:
     void write_socks5_response()
     {
         auto self(shared_from_this());
-
-
-
 
         in_buf[0] = 0x05; in_buf[1] = 0x00; in_buf[2] = 0x00; in_buf[3] = 0x01;
         uint32_t realRemoteIP = out_socket.remote_endpoint().address().to_v4().to_ulong();
